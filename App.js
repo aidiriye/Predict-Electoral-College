@@ -90,7 +90,8 @@ class App extends React.Component {
               "illinois","new york", "vermount","massachusetts",
               "rhode island","connecticut","new jersey",
               "delaware","maryland","dc","hawaii"],
-            "safe_red":["alaska","idaho","utah","montana","wyoming","north dakota",
+            "safe_red":["alaska","idaho","utah","montana",
+              "wyoming","north dakota",
               "south dakota","nebraska","kansas",
               "oklahoma","indiana","south carolina",
               "kentucky","west virginia","tennessee",
@@ -120,7 +121,9 @@ class App extends React.Component {
   renderPaletteOption(i) {
     return (
       <PaletteOption 
-        isSelected={this.state.palette[i]} onClick={() => this.handlePaletteClick(i)}/>
+        isSelected={this.state.palette[i]} 
+        onClick={() => this.handlePaletteClick(i)}
+      />
     );
   }
 
@@ -191,13 +194,32 @@ class App extends React.Component {
         <div>{this.state.delegates.dem_delegates}</div>
         <div>{this.state.delegates.rep_delegates}</div>
         <div class="cols_container">
-          <div class="ratings_col"><div class="rating_header" id="rating_header_sb">Safe Blue</div>{this.getStatesWithRatings("safe_blue")}</div>
-          <div class="ratings_col"><div class="rating_header" id="rating_header_lkb>Likely Blue</div>{this.getStatesWithRatings("likely_blue")}</div>
-          <div class="ratings_col"><div class="rating_header" id="rating_header_lnb>Lean Blue</div>{this.getStatesWithRatings("lean_blue")}</div>
-          <div class="ratings_col"><div class="rating_header" id="rating_header_tu>Tossup</div>{this.getStatesWithRatings("tossup")}</div>
-          <div class="ratings_col"><div class="rating_header" id="rating_header_lnr>Lean Red</div>{this.getStatesWithRatings("lean_red")}</div>
-          <div class="ratings_col"><div class="rating_header" id="rating_header_lkr>Likely Red</div>{this.getStatesWithRatings("likely_red")}</div>
-          <div class="ratings_col"><div class="rating_header" id="rating_header_sr>Safe Red</div>{this.getStatesWithRatings("safe_red")}</div>
+          <div class="ratings_col">
+            <div class="rating_header" id="rating_header_sb">Safe Blue</div>
+            {this.getStatesWithRatings("safe_blue")}
+          </div>
+          <div class="ratings_col">
+            <div class="rating_header" id="rating_header_lkb">Likely Blue</div>
+            {this.getStatesWithRatings("likely_blue")}</div>
+          <div class="ratings_col">
+            <div class="rating_header" id="rating_header_lnb">Lean Blue</div>
+            {this.getStatesWithRatings("lean_blue")}</div>
+          <div class="ratings_col">
+            <div class="rating_header" id="rating_header_tu">Tossup</div>
+            {this.getStatesWithRatings("tossup")}
+          </div>
+          <div class="ratings_col">
+            <div class="rating_header" id="rating_header_lnr">Lean Red</div>
+            {this.getStatesWithRatings("lean_red")}
+          </div>
+          <div class="ratings_col">
+            <div class="rating_header" id="rating_header_lkr">Likely Red</div>
+            {this.getStatesWithRatings("likely_red")}
+          </div>
+          <div class="ratings_col">
+            <div class="rating_header" id="rating_header_sr">Safe Red</div>
+            {this.getStatesWithRatings("safe_red")}
+          </div>
         </div>
         <div>5</div>
       </div>
@@ -205,69 +227,5 @@ class App extends React.Component {
   }
 
 }
-
-/*function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
-
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-
-
-*/
 
 export default App;

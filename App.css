@@ -38,21 +38,26 @@ body {
 }
 .ratings_col {
   flex-grow: 1;
+  flex-basis: 0;
 }
 
 
 .state_container {
   display: flex;
+  padding-left: 5px;
 }
 .state_button_container {
   flex: 1;
+  flex-basis: 0;
 }
 .state_name_container {
   flex: 3;
+  flex-basis: 0;
 }
 
 .rating_header {
-  height: 20px;
+  height: 25px;
+  padding-left: 5px;
 }
 #rating_header_sb {
   background-color: #00a2e8;
