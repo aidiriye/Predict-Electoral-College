@@ -81,6 +81,43 @@ body {
   background-color: #ed1c23;
 }
 
+#bar_container {
+  display: flex;
+  width: 80%;
+  margin: auto;
+}
+.bar {
+  flex-basis: 0;
+  height: 30px;
+}
+#democrat_bar {
+  flex: 0;
+  background-color: blue;
+}
+#republican_bar {
+  flex: 0;
+  background-color: red;
+}
+#tossup_bar {
+  flex: 1;
+  background-color: gray;
+}
+
+#del_label_container {
+  display: flex;
+  width: 80%;
+  margin: auto;
+}
+
+#dem_del_label {
+  flex: 1;
+}
+#rep_del_label {
+  flex: 1;
+  text-align: right;
+}
+
+
 
 
 

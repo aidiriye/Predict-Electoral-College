@@ -3,6 +3,23 @@ import React from 'react';
 import './App.css';
 
 const PaletteCode = ["gray", "blue", "red"];
+const TotalDelegates = 538;
+
+function DelegateBar(props) {
+  return (
+    <div>
+      <div id="del_label_container">
+        <div id="dem_del_label">Democrats<br/><span>{props.delegates.dem_delegates}</span>Delegates</div>
+        <div id="rep_del_label">Republicans<br/><span>{props.delegates.rep_delegates}</span>Delegates</div>
+      </div>
+      <div id="bar_container">
+        <div id="democrat_bar" class="bar" style={{flex: props.delegates.dem_delegates}}></div>
+        <div id="tossup_bar" class="bar" style={{flex: (538 - props.delegates.dem_delegates - props.delegates.rep_delegates)}}></div>
+        <div id="republican_bar" class="bar" style={{flex: props.delegates.rep_delegates}}></div>
+      </div>
+    </div>
+  );
+}
 
 function USState(props) {
   return (
@@ -191,8 +208,7 @@ class App extends React.Component {
         {this.renderPaletteOption(1)}
         {this.renderPaletteOption(2)}
         <div><button onClick={() => this.handleResetClick()}>Reset</button></div>
-        <div>{this.state.delegates.dem_delegates}</div>
-        <div>{this.state.delegates.rep_delegates}</div>
+        <DelegateBar delegates={this.state.delegates}/>
         <div class="cols_container">
           <div class="ratings_col">
             <div class="rating_header" id="rating_header_sb">Safe Blue</div>
